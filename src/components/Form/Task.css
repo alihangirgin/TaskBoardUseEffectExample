@@ -1,0 +1,72 @@
+.task-create-form-div {
+  width: 450px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-label {
+  margin: 10px 0;
+}
+
+.task-input {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.task-button{
+    border: 1px solid green;
+    margin: 15px 0px;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}    
+
+.task-button-update{
+    border: 1px solid lightblue;
+    margin: 15px 0px;
+    padding: 10px;
+    background-color: lightblue;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}  
+.task-list-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.task-item-div {
+    border: 1px solid green;
+    padding: 20px;
+    border-radius: 30px;
+    width: 350px;
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    flex-direction: column;   
+}
+
+.update-button {
+    padding: 5px;
+    background-color: lightblue;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    border: solid 1px black;
+}
+
+.delete-button {
+    padding: 5px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    border: solid 1px black;
+}
