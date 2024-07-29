@@ -22,20 +22,21 @@ function App() {
     setTasks(newArray);
   }
 
-  const handleUpdateFormSubmit = (updateFormParamaters) => {
-    debugger;
-    tempArray = [...tasks];
-    const itemToBeUpdateIndex =  tempArray.findIndex(x=> x.id === updateFormParamaters.id)
+  const handleUpdateFormParameters = (idValue, titleValue, descriptionValue) => {
+    const itemToBeUpdateIndex =  tasks.findIndex(x=> x.id === idValue);
     if(itemToBeUpdateIndex != -1)
-      tempArray[itemToBeUpdateIndex] = updateFormParamaters;
-    setTasks(tempArray);
+    {
+      tasks[itemToBeUpdateIndex].title =  titleValue;
+      tasks[itemToBeUpdateIndex].description =  descriptionValue;
+      setTasks(tasks);
+    }
   }
 
   return (
     <div className="App">
-      <TaskForm formParameters={handleFormSubmit} updateFormParamaters={handleUpdateFormSubmit} />
+      <TaskForm formParameters={handleFormSubmit}/>
       <h1>My Tasks</h1>
-      <TaskList tasks= {tasks} deletedItemId={handleDeletedItem}/>
+      <TaskList tasks= {tasks} deletedItemId={handleDeletedItem} updateFormParamaters={handleUpdateFormParameters}/>
     </div>
   );
 }

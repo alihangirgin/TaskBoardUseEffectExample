@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './Task.css'
 
-export default function TaskForm({formParameters, isUpdate, updateFormParamaters}) {
+export default function TaskForm({formParameters, isUpdate, updateId, updateFormParamaters}) {
 const [titleValue, setTitleValue] = useState( formParameters?.title ?? "");
 const [descriptionValue, setDescriptionValue] = useState(formParameters?.description ?? ""); 
-const [idValue, setIdValue] = useState(formParameters?.id ?? ""); 
+const [idValue, setIdValue] = useState(updateId ?? 0); 
 
 const handleTaskInputOnChange = (event) => {
     setTitleValue(event.target.value);
@@ -16,14 +16,13 @@ const handleTaskAreaOnChange = (event) => {
 
 const handleFormCreateOnSubmit = (event) => {
     event.preventDefault();
-    debugger;
     if(isUpdate)
         updateFormParamaters(idValue, titleValue, descriptionValue);
     else
         formParameters(titleValue, descriptionValue);
     setTitleValue("");
     setDescriptionValue("");
-    setIdValue("");
+    setIdValue(0);
 }
 
   return (

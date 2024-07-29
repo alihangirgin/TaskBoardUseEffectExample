@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import TaskForm from "./TaskForm";
 
-export default function TaskItem({ taskParam, deletedItemId }) {
-
+export default function TaskItem({ taskParam, deletedItemId, updateFormParamaters }) {
   const [showEditForm, setShowEditForm] = useState(false);
 
   const handleUpdateButtonOnClick = () => {
@@ -13,8 +12,9 @@ export default function TaskItem({ taskParam, deletedItemId }) {
     deletedItemId(taskParam.id);
   };
 
-  const handleUpdateFormParameters = () => {
+  const handleUpdateFormParameters = (idValue, titleValue, descriptionValue) => {
     setShowEditForm(false);
+    updateFormParamaters(idValue, titleValue, descriptionValue);
   }
 
   return (
@@ -22,7 +22,7 @@ export default function TaskItem({ taskParam, deletedItemId }) {
       {showEditForm ? 
       
       <div>
-        <TaskForm isUpdate={true} updateFormParamaters={handleUpdateFormParameters}/>
+        <TaskForm isUpdate={true}  updateId={taskParam.id} updateFormParamaters={handleUpdateFormParameters}/>
       </div> 
       
       : <div>
